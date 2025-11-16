@@ -1,0 +1,95 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* align-items: center; */
+}
+
+.wrapper {
+    padding: 4px;
+    border: 1px solid black;
+    width: 65%;
+}
+
+#name h1 {
+   margin: 5px;
+   text-align: center;
+   font-weight: 600;
+}
+
+.social-handles {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+.social-handles li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.section {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.section-content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2xp solid palegreen;
+}
+
+.skill-title {
+    font-weight: 700;
+}
+
+.skills {
+    display: inline-block;
+}
+
+.designation {
+    font-weight: 700;
+}
+
+.designation-description {
+    /* color: gray; */
+    font-weight: 400;
+}
+
+.date {
+    float: right;
+}
+
+.experience-title {
+    margin: 5px 0px;
+}
+
+.section-header {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.section-lists {
+    margin-left: 15px;
+}
+
+.project-title {
+    font-weight: 600;
+}
+
+.project-tech-stack {
+    font-weight: 100;
+}
+
+.education-info {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}

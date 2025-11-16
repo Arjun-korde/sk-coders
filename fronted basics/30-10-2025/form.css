@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Rubik;
+    src: url("../fonts/Rubik/static/Rubik-SemiBold.ttf");
+}
+
+.company-name {
+    font-family: Rubik;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 61%;
+    /* border: 1px solid black; */
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 2px;
+}
+
+.header {
+    /* border: 2px dashed yellow; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.left-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px dashed green; */
+    width: 40%;
+}
+
+.logo {
+    margin: 5px;
+}
+
+.company-info {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.company-info p {
+    font-weight: 100;
+}
+
+.company-name {
+    font-weight: bold;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+
+.right-box {
+    /* border: 2px dashed green; */
+    width: 40%;
+    /* font-size: 12px; */
+    display: flex;
+    justify-content: center;
+}
+
+.social-handles {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    /* font-size: 16px; */
+}
+
+.hr {
+    border: 1px solid grey;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+#photo {
+    text-align: center;
+}
+
+.section-title {
+    font-weight: bold;
+    margin: 20px 0px;
+    text-transform: uppercase;
+}

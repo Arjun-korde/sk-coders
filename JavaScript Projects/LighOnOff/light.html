@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Bulb</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .bulb-box {
+            margin-bottom: 1rem;
+        }
+        #btn {
+            width: 4rem;
+            height: 2rem;
+            border: none;
+            border-radius: 5px;
+            background: rgb(107, 195, 107);
+            cursor: pointer;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="bulb-box">
+            <img src="../../assests/images/pic_bulboff.gif" alt="bulb" isOn="true" id="bulb">
+        </div>
+        <button id="btn">On</button>
+
+    </div>
+</body>
+<script>
+    let bulb = document.getElementById("bulb");
+    let btn = document.getElementById("btn");
+
+    let isOn = false;
+
+    btn.addEventListener('click', function() {
+        
+        if(isOn) {
+
+            bulb.setAttribute('src','../../assests/images/pic_bulboff.gif');
+            btn.textContent = 'On';
+            btn.style.background = 'rgb(107, 195, 107)';
+            isOn = false;
+
+        } else {
+
+            bulb.setAttribute('src', '../../assests/images/pic_bulbon.gif');
+            btn.textContent = 'Off';
+            isOn = true;
+            btn.style.background = 'rgb(209, 81, 81)';
+
+        }
+    });
+
+</script>
+</html>

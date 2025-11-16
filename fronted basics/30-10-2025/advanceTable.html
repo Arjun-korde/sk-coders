@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Table</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        table {
+            width: 100%;
+        }
+        @font-face {
+            font-family: Rubik;
+            src: url("../fonts/Rubik/static/Rubik-Light.ttf");
+        }
+
+        * {
+            font-family: Rubik;
+        }
+
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Category</th>
+            <th colspan="2">Product</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td rowspan="2">Electronics</td>
+            <td>SmartPhone</td>
+            <td>Model A</td>
+            <td>$499</td>
+        </tr>
+        <tr>
+            
+            <td colspan="2">Smartwatch - special bundle</td>
+            <td>$199</td>
+        </tr>
+        <tr>
+            <td>Home</td>
+            <td>Blender</td>
+            <td>Model X</td>
+            <td>$134</td>
+        </tr>
+    </table>
+</body>
+</html>

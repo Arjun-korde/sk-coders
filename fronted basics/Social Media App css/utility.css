@@ -1,0 +1,51 @@
+.center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.border-d {
+    border: 2px solid black;
+}
+
+.border-r {
+    border: 2px solid rgb(219, 18, 18);
+}
+
+.fa {
+    margin-right: 1rem;
+}
+
+.fa-calendar-check {
+    color: white;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.white-card-design {
+    background-color: #ffff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgb(183, 181, 181);
+}
+
+.hr {
+    border: 0.01px solid rgb(230, 230, 230);
+}
+
+.high-priority {
+    color: white;
+    background-color: #4e626d;
+}
+
+.medium-priority {
+    color: white;
+    background-color: #8296a3;
+}
+
+.low-priority {
+    color: white;
+    background-color: #bbbec0;
+}
