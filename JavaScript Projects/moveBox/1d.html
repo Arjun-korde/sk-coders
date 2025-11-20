@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Box</title>
+    <style>
+        * {
+            margin: 0;
+            /* padding: 0; */
+            box-sizing: border-box;
+        }
+        .container {
+            height: 100vh;
+            padding: 10px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(52, 238, 167);
+            margin-bottom: 30px;
+            position: absolute;
+            left:0px;
+            
+        }
+
+        .move-btn {
+            position: absolute;
+            top: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="box" class="box">
+
+        </div>
+        <button id="move" class="move-btn">
+            Move
+        </button>
+    </div>
+
+    <script>
+        var box = document.getElementById('box');
+        var btn = document.getElementById('move');
+        btn.addEventListener('click', function () {
+
+            if (box.offsetLeft > 0) {
+                var id = setInterval(function () {
+                    if (box.offsetLeft > 0){
+                        box.style.left = (box.offsetLeft - 1) + "px";
+                    }
+                    else{
+                        clearInterval(id)
+                    }
+                })
+            }
+            else {
+                var id = setInterval(function () {
+                    if (box.getBoundingClientRect().right < window.innerWidth){
+                        box.style.left = (box.offsetLeft + 1) + "px";
+                    }
+                    else{
+                        clearInterval(id)
+                    }
+                })
+            }
+
+
+        })
+    </script>
+</body>
+
+</html>

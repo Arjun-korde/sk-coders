@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular movement</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        #parent-box {
+            height: 500px;
+            width: 500px;
+            background: #42e3a0;
+            position: relative;
+        }
+
+        #box {
+            position: absolute;
+            background: #000;
+            height: 100px;
+            width: 100px;
+            /* left: 20px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="parent-box">
+            <div id="box">
+
+            </div>
+        </div>
+
+        <div class="btns">
+            <button type="button" id="start-btn">Start</button>
+            <button type="button" id="pause-btn">pause</button>
+        </div>
+    </div>
+</body>
+<script>
+    let parentBox = document.getElementById("parent-box");
+    let box = document.getElementById("box");
+    let startBtn = document.querySelector("#start-btn");
+    let pauseBtn = document.querySelector("#pause-btn");
+    let childBoxWidth = box.getBoundingClientRect().width;
+    let parentBoxWidth = parentBox.getBoundingClientRect().width;
+    let boxBoundry = parentBox.getBoundingClientRect().width - box.getBoundingClientRect().width;
+
+    let x = 0;
+    let y = 0;
+
+    let intervalId = null;
+    let direction = 'right';
+
+    let level = 0;
+
+    function moveBox() {
+        if (direction == 'right') {
+            x++;
+            if (x >= boxBoundry - (childBoxWidth * level)) direction = 'down';
+        } else if (direction == 'down') {
+            y++;
+            if (y >= boxBoundry - (childBoxWidth * level)) direction = 'left';
+        } else if (direction == 'left') {
+            x--;
+            if (x <= (childBoxWidth) * (level)) direction = 'up';
+        } else if (direction == 'up') {
+            y--;
+            if (y <= (childBoxWidth) * (level+1)){
+                direction = 'right';
+                // completed one rounnd
+                // clearInterval(intervalId);
+                // intervalId = null;
+                console.log(`level : ${level} and ${Math.floor((parentBoxWidth/childBoxWidth)/2)}`);
+                if(level == Math.floor((parentBoxWidth/childBoxWidth)/2)) {
+                    clearInterval(intervalId);
+                    intervalId=null;
+                }
+                level++;
+            };
+        }
+
+        box.style.left = x + "px";
+        box.style.top = y + "px";
+    }
+
+    startBtn.addEventListener('click', () => {
+
+        if (intervalId) return;
+        intervalId = setInterval(moveBox);
+    });
+
+    pauseBtn.addEventListener('click', () => {
+        clearInterval(intervalId);
+        intervalId = null;
+    });
+
+
+
+</script>
+
+</html>
